@@ -39,7 +39,7 @@ function showButtons() {
       $("#image-farm").empty();
       for (i=0; i < results.length; i++) {
       
-      //console.log(response);
+      console.log(response);
       // create div to hold the fooditems
       var  foodDiv= $("<div class='foods'>");
       // store rating data
@@ -50,14 +50,16 @@ function showButtons() {
       //display the rating data
       foodDiv.append(foodRating);
     
-
       // store image url
       var imageUrl = results[i].images.fixed_height.url;
+      var imageStillUrl = results[i].images.fixed_height_still.url;
       // create an element to display the URL
-      var foodImage = $("<img>").attr("src", imageUrl);
+      var foodImage = $("<img id='data-animate'>").attr("src", imageUrl);
+      var foodImageStill = $("<img id='data-still'>").attr("src", imageStillUrl);
       console.log(foodImage);
       //display the url
-      foodDiv.append(foodImage);
+      foodDiv.append(foodImageStill);
+      //foodDiv.append(foodImage);
       //appending the movie 
 
       $("#image-farm").append(foodDiv);
