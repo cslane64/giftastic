@@ -2,13 +2,26 @@
     box-sizing: border-box;
 }
 
-.body {
-    background-image: url("white-waves.png");
+body {
+   background-image: url("../images/white-waves.png");
 }
 
 #food-form {
     float: right;
     margin: 40px 140px 0 0;
+}
+
+#food-add-label {
+    margin: 20px;
+    font-size: 24px;
+}
+
+#food-input {
+    margin: 20px;
+}
+
+#add-food {
+    margin: 0 20px;
 }
 
 #button-farm {

@@ -43,7 +43,7 @@ function showButtons() {
       var  foodDiv= $("<div class='foods'>");
       // store rating data
       var rating = results[i].rating;
-      var foodRating = $("<h4>").text("rating: " + rating);
+      var foodRating = $("<h4>").text("Rating: " + rating);
       //console.log(foodRating);
       var animated = results[i].images.fixed_height.url;
       var still = results[i].images.fixed_height_still.url;
