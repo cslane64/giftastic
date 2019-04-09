@@ -22,6 +22,11 @@ body {
 
 #add-food {
     margin: 0 20px;
+    background-color: #4aaaa5;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+
 }
 
 #button-farm {
