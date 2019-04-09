@@ -39,45 +39,37 @@ function showButtons() {
       $("#image-farm").empty();
       for (i=0; i < results.length; i++) {
       
-      console.log(response);
       // create div to hold the fooditems
       var  foodDiv= $("<div class='foods'>");
       // store rating data
       var rating = results[i].rating;
       var foodRating = $("<h4>").text("rating: " + rating);
-      console.log(foodRating);
-      
+      //console.log(foodRating);
+      var animated = results[i].images.fixed_height.url;
+      var still = results[i].images.fixed_height_still.url;
+      var foodImage = $("<img>");
+      $(foodImage).addClass("food-gallery");
+      $(foodImage).attr("src", still);
+      $(foodImage).attr("data-still", still);
+      $(foodImage).attr("data-animated", animated);
+      $(foodImage).attr("data-state", "still");
       //display the rating data
       foodDiv.append(foodRating);
-    
-      // store image url
-      var imageUrl = results[i].images.fixed_height.url;
-      var imageStillUrl = results[i].images.fixed_height_still.url;
-      // create an element to display the URL
-      
-      var foodImageAnimate = $("<img id='data-animate'>").attr("src", imageUrl);
-      var foodImageStill = $("<img id='data-still'>").attr("src", imageStillUrl);
-      
-      console.log("data-state");
-      //display the url
-      foodDiv.append(foodImageStill);
-      //foodDiv.append(foodImage);
-      //appending the movie 
+      foodDiv.append(foodImage);
+      console.log(foodDiv);
       
       $("#image-farm").append(foodDiv);
     }   
-    $(document).on("click", ".foods", function() {
+    $(".foods").on("click", ".food-gallery", function() {
       
-      // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+      
       var state = $(this).attr("data-state");
-      // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-      // Then, set the image's data-state to animate
-      // Else set src to the data-still value
+      
       console.log(state)
       if (state === "still") {
-    
-        $(this).attr("src", $(this).attr("data-animate"));
-        $(this).attr("data-state", "animate");
+        console.log ("state === still is true");
+        $(this).attr("src", $(this).attr("data-animated"));
+        $(this).attr("data-state", "animated");
       } else {
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");

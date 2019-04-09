@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+.body {
+    background-image: url("white-waves.png");
+}
+
 #food-form {
     float: right;
     margin: 40px 140px 0 0;
@@ -15,6 +19,7 @@
     color: #fff;
     margin: 0 5px 0 5px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 #image-farm {
